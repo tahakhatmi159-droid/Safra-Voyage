@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Safra Voyages</title>
+  <meta name="description" content="Contactez Safra Voyages pour préparer votre séjour.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Nunito+Sans:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../index.html">Safra Voyages</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="offres.html">Offres</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="outils">
+      <button id="theme" type="button" aria-label="Changer le thème clair ou sombre">◐</button>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="wrap">
+  <h1>Contactez-nous</h1>
+  <p>Dites-nous où vous voulez partir, nous vous répondons sous 24 h.</p>
+  <form id="contact" novalidate>
+    <div><label for="nom">Nom</label><input id="nom" name="nom" type="text" autocomplete="name" aria-describedby="err-nom"><p class="err" id="err-nom"></p></div>
+    <div><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" aria-describedby="err-email"><p class="err" id="err-email"></p></div>
+    <div><label for="message">Message</label><textarea id="message" name="message" rows="5" aria-describedby="err-message"></textarea><p class="err" id="err-message"></p></div>
+    <button class="btn" type="submit">Envoyer le message</button>
+    <p class="msg-ok" id="retour" role="status"></p>
+  </form>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© 2026 Safra Voyages, Tunis · <a href="contact.html">Nous écrire</a></p>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
