@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Destinations | Safra Voyages</title>
+  <meta name="description" content="Nos destinations en Tunisie et à l’étranger, avec un calculateur de prix.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&family=Nunito+Sans:wght@400;700;800&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="../index.html">Safra Voyages</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="destinations.html" aria-current="page">Destinations</a></li>
+        <li><a href="offres.html">Offres</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="outils">
+      <button id="theme" type="button" aria-label="Changer le thème clair ou sombre">◐</button>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="wrap">
+  <h1>Destinations</h1>
+  <div class="filtres" role="group" aria-label="Filtrer par zone">
+    <button type="button" class="actif" data-filtre="tout">Toutes</button>
+    <button type="button" data-filtre="tunisie">Tunisie</button>
+    <button type="button" data-filtre="etranger">Étranger</button>
+  </div>
+  <div class="grille">
+<article class="carte" data-zone="tunisie"><img src="../images/djerba.svg" alt="Djerba" width="600" height="400" loading="lazy"><div class="txt"><h3>Djerba</h3><p>Plages de sable fin et médina de Houmt Souk.</p><p class="prix">dès 120 DT / nuit</p></div></article>
+<article class="carte" data-zone="tunisie"><img src="../images/tozeur.svg" alt="Tozeur" width="600" height="400" loading="lazy"><div class="txt"><h3>Tozeur</h3><p>Dunes, oasis de palmiers et décors de cinéma.</p><p class="prix">dès 90 DT / nuit</p></div></article>
+<article class="carte" data-zone="etranger"><img src="../images/istanbul.svg" alt="Istanbul" width="600" height="400" loading="lazy"><div class="txt"><h3>Istanbul</h3><p>Entre l’Europe et l’Asie, bazars et mosquées.</p><p class="prix">dès 160 DT / nuit</p></div></article>
+<article class="carte" data-zone="etranger"><img src="../images/paris.svg" alt="Paris" width="600" height="400" loading="lazy"><div class="txt"><h3>Paris</h3><p>Musées, cafés et la tour Eiffel au coucher du soleil.</p><p class="prix">dès 220 DT / nuit</p></div></article>
+<article class="carte" data-zone="tunisie"><img src="../images/tabarka.svg" alt="Côte de Tabarka et son fort" width="600" height="400" loading="lazy"><div class="txt"><h3>Tabarka</h3><p>Forêts de pins, plongée et fort génois sur son îlot.</p><p class="prix">dès 100 DT / nuit</p></div></article>
+<article class="carte" data-zone="tunisie"><img src="../images/hammamet.svg" alt="Médina fortifiée de Hammamet" width="600" height="400" loading="lazy"><div class="txt"><h3>Hammamet</h3><p>Médina fortifiée, jasmin et plages au bord de l’eau.</p><p class="prix">dès 110 DT / nuit</p></div></article>
+<article class="carte" data-zone="etranger"><img src="../images/dubai.svg" alt="Gratte-ciel de Dubai au coucher du soleil" width="600" height="400" loading="lazy"><div class="txt"><h3>Dubai</h3><p>Gratte-ciel, désert et plages sous le soleil du Golfe.</p><p class="prix">dès 280 DT / nuit</p></div></article>
+<article class="carte" data-zone="etranger"><img src="../images/rome.svg" alt="Colisée de Rome" width="600" height="400" loading="lazy"><div class="txt"><h3>Rome</h3><p>Colisée, ruelles anciennes et pizza sur les places.</p><p class="prix">dès 200 DT / nuit</p></div></article>
+  </div>
+</section>
+<section class="bande"><div class="wrap">
+  <h2>Calculez le prix de votre séjour</h2>
+  <form id="calcul">
+    <div><label for="destination">Destination</label>
+      <select id="destination" name="destination"><option value="0">Choisir…</option><option value="120">Djerba (120 DT / nuit)</option><option value="90">Tozeur (90 DT / nuit)</option><option value="160">Istanbul (160 DT / nuit)</option><option value="220">Paris (220 DT / nuit)</option><option value="100">Tabarka (100 DT / nuit)</option><option value="110">Hammamet (110 DT / nuit)</option><option value="280">Dubai (280 DT / nuit)</option><option value="200">Rome (200 DT / nuit)</option></select></div>
+    <div><label for="nuits">Nombre de nuits</label><input id="nuits" name="nuits" type="number" min="1" value="3"></div>
+    <div><label for="personnes">Nombre de personnes</label><input id="personnes" name="personnes" type="number" min="1" value="2"></div>
+    <p>Total estimé : <span class="resultat" id="total" aria-live="polite">—</span></p>
+  </form>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <p>© 2026 Safra Voyages, Tunis · <a href="contact.html">Nous écrire</a></p>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
