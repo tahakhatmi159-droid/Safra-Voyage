@@ -1,0 +1,107 @@
+/* Safra Voyages - mobile-first */
+:root{--bleu:#1f4e9c;--marine:#0b1f3a;--sable:#f3ead8;--fond:#fbfaf6;--texte:#1a2438;--carte:#fff;--accent:#f2b134;--erreur:#b3261e;--ok:#1b7a43;--r:14px;--gap:1.25rem}
+[data-theme="dark"]{--fond:#0b1426;--texte:#e8edf7;--carte:#14213a;--sable:#1a2a47;--bleu:#7fa8ff;--marine:#050b17}
+*{box-sizing:border-box}
+body{margin:0;font:1rem/1.6 "Nunito Sans",system-ui,sans-serif;background:var(--fond);color:var(--texte)}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,serif;line-height:1.15;margin:0 0 .6rem}
+h1{font-size:clamp(2rem,7vw,3.6rem)}h2{font-size:clamp(1.5rem,4vw,2.2rem)}
+img{max-width:100%;display:block}
+a{color:var(--bleu)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{width:min(1200px,92%);margin-inline:auto}
+section{padding:3rem 0}
+/* header + nav */
+header{position:sticky;top:0;z-index:10;background:var(--marine);color:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+.logo{font:700 1.3rem "Bricolage Grotesque",serif;color:#fff;text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:none;flex-direction:column;gap:.2rem}
+nav.ouvert ul{display:flex;position:absolute;left:0;right:0;top:100%;background:var(--marine);padding:1rem 4%}
+nav a{color:#fff;text-decoration:none;padding:.5rem .8rem;border-radius:8px;display:block}
+nav a:hover,nav a[aria-current="page"]{background:var(--bleu)}
+.outils{display:flex;gap:.5rem}
+.outils button{background:none;border:1px solid #fff6;color:#fff;border-radius:8px;padding:.4rem .7rem;cursor:pointer;font-size:1rem}
+/* boutons + cartes */
+.btn{display:inline-block;background:var(--accent);color:var(--marine);font-weight:700;padding:.75rem 1.4rem;border-radius:999px;border:0;text-decoration:none;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(1.08)}
+[hidden]{display:none !important}
+.grille{display:grid;gap:var(--gap);grid-template-columns:1fr}
+.carte{background:var(--carte);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 10px #0b1f3a22;display:flex;flex-direction:column}
+.carte .txt{padding:1rem 1.2rem 1.3rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.prix{font-weight:800;color:var(--bleu);font-size:1.15rem}
+/* hero */
+.hero{display:grid;gap:2rem;align-items:center}
+.hero p{max-width:55ch}
+.chiffres{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.5rem}
+.chiffres strong{display:block;font:700 2rem "Bricolage Grotesque",serif;color:var(--bleu)}
+.bande{background:var(--sable)}
+/* filtres */
+.filtres{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.filtres button{border:2px solid var(--bleu);background:none;color:var(--bleu);border-radius:999px;padding:.4rem 1rem;cursor:pointer;font-weight:700}
+.filtres button.actif{background:var(--bleu);color:#fff}
+[data-theme="dark"] .filtres button.actif{color:#0b1426}
+/* formulaires */
+form{display:grid;gap:1rem;max-width:560px}
+label{font-weight:700;display:block;margin-bottom:.25rem}
+input,select,textarea{width:100%;padding:.7rem;border:2px solid #8a94a8;border-radius:10px;font:inherit;background:var(--carte);color:var(--texte)}
+input.invalide,textarea.invalide{border-color:var(--erreur)}
+.err{color:var(--erreur);font-size:.9rem;min-height:1.1em;margin:.2rem 0 0}
+[data-theme="dark"] .err{color:#ff9b93}
+.msg-ok{color:var(--ok);font-weight:700}
+.resultat{font:700 1.5rem "Bricolage Grotesque",serif;color:var(--bleu)}
+footer{background:var(--marine);color:#d5def0;padding:2rem 0;text-align:center}
+footer a{color:var(--accent)}
+/* tablette */
+@media (min-width:768px){
+ .grille{grid-template-columns:repeat(2,1fr)}
+ .hero{grid-template-columns:1.1fr 1fr}
+}
+/* ordinateur */
+@media (min-width:1024px){
+ .burger{display:none}
+ nav ul,nav.ouvert ul{display:flex;flex-direction:row;position:static;padding:0;background:none}
+ .grille.trois{grid-template-columns:repeat(3,1fr)}
+ .grille{grid-template-columns:repeat(4,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){.carte{transition:transform .2s}.carte:hover{transform:translateY(-4px)}}
+
+/* ===== Animations et transitions (désactivées si l'utilisateur réduit les animations) ===== */
+@media (prefers-reduced-motion:no-preference){
+  body{transition:background-color .4s,color .4s}
+  .carte,input,select,textarea{transition:background-color .4s,transform .25s,box-shadow .25s,border-color .2s}
+  .carte:hover{box-shadow:0 10px 24px #0b1f3a33}
+  .carte img{transition:transform .5s}
+  .carte:hover img{transform:scale(1.08)}
+  .btn{transition:transform .2s,box-shadow .2s,filter .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px #f2b13466}
+  .btn:active{transform:scale(.97)}
+  nav a,.filtres button,.outils button{transition:background-color .25s,color .25s,transform .2s}
+  .outils button:hover{transform:scale(1.1)}
+  input:focus,select:focus,textarea:focus{border-color:var(--bleu);box-shadow:0 0 0 3px #1f4e9c33}
+
+  /* animation d'ouverture de la page d'accueil : le titre, le texte puis l'image arrivent l'un après l'autre */
+  @keyframes monte{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .hero h1{animation:monte .7s both}
+  .hero p,.chiffres{animation:monte .7s .2s both}
+  .hero img{animation:monte .8s .4s both,flotte 6s 1.2s ease-in-out infinite}
+  @keyframes flotte{50%{transform:translateY(-10px)}}
+
+  /* apparition des cartes au défilement (la classe .visible est ajoutée par le JS) */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* filtre : les cartes réapparaissent avec un petit zoom */
+  @keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+  [data-zone]:not([hidden]){animation:pop .4s}
+
+  /* menu mobile qui glisse, burger qui tourne */
+  @keyframes glisse{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+  nav.ouvert ul{animation:glisse .25s}
+  .burger{transition:transform .3s}
+  .burger[aria-expanded="true"]{transform:rotate(90deg)}
+
+  /* le total se met en évidence à chaque changement */
+  @keyframes bump{50%{transform:scale(1.2)}}
+  .resultat.maj{display:inline-block;animation:bump .3s}
+  .err:not(:empty){animation:glisse .3s}
+}
+.carte img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
